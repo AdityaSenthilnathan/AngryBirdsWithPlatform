@@ -1,5 +1,5 @@
 class Ground {
-    constructor(x,y,width,height) {
+    constructor(x,y,width,height, colour) {
       var options = {
           isStatic: true
       }
@@ -7,11 +7,12 @@ class Ground {
       this.width = width;
       this.height = height;
       World.add(world, this.body);
+      this.colour = colour;
     }
     display(){
       var pos =this.body.position;
       rectMode(CENTER);
-      fill("brown");
+      fill(this.colour);
       rect(pos.x, pos.y, this.width, this.height);
     }
   };
